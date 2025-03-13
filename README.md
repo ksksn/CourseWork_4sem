@@ -1,7 +1,6 @@
 # CourseWork_4sem [Novak Ksenia 353504]
 
-## Description
-Content sharing web application with adaptive recommendation system
+## Content sharing web application with adaptive recommendation system
 People tend to communicate and interact with each other. The content sharing platform provides users with the opportunity to share their thoughts, ideas and creativity, which contributes to the creation of a richer and more diverse information environment.
 
 

@@ -1,6 +1,6 @@
 # CourseWork_4sem [Novak Ksenia 353504]
 
-## Content Sharing Web Application with Adaptive Recommendation System
+## Content Sharing Web-Application with Adaptive Recommendation System
 
 People naturally seek out connection and interaction with others, and this tendency is a fundamental aspect of human nature. In the digital age, where interactions often happen through screens, content sharing platforms serve as vital conduits for communication. These platforms enable users to express themselves, share their thoughts, ideas, and creativity, thus contributing to the development of a more dynamic and varied information landscape.
 

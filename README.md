@@ -14,89 +14,71 @@ People naturally seek out connection and interaction with others, and this tende
 5. A feed of recommendations based on user preferences, subscriptions, and used/viewed hashtags.
 
 
+### 1. The User Model
 
+**Purpose:** Authorization management and storage of user information.
 
-# Content Sharing Web Application with Adaptive Recommendation System
+**Fields:**
+- `userId` (String): The unique user ID.
+- `username` (String): Username.
+- `email` (String): The email address for authentication.
+- `PasswordHash` (String): A hash of the password to ensure security.
+- `profilePicture' (String): The URL to the profile picture.
+- `bio` (String): A text description of the user.
+- `createdAt' (Date): The registration date.
+- `updatedAt` (Date): The date of the last profile update.
+- `authProvider` (String): The service that the user used to register (for example, Google, Facebook).
 
-## Описание проекта
+**Methods:**
+- `register()`: Registration of a new user via email or an external service.
+- `login()`: The user logs into the application via email or an external service.
+- `editProfile()': Changing profile information.
+- `DeleteAccount()': Deleting an account.
 
-Данное веб-приложение служит платформой для обмена контентом, где пользователи могут делиться своими мыслями, идеями и творческими работами. Приложение предлагает возможности для создания и управления профилями пользователей, публикации заметок с хештегами, комментирования постов и получения рекомендаций на основе интересов пользователей.
+### 2. The Post model
 
-## Функциональные требования
+**Purpose:** Storing and managing records created by users.
 
-1. **Аутентификация через электронную почту** и возможность входа через сторонние сервисы.
-2. **Профиль пользователя** с текстовым полем описания.
-3. **Создание заметки** с возможностью добавления хештегов.
-4. **Создание комментариев** к своим и чужим постам, функция "лайка", репосты на своей странице.
-5. **Лента рекомендаций** на основе предпочтений пользователей, подписок и используемых/просмотренных хештегов.
+**Fields:**
+- `postId` (String): The unique identifier of the post.
+- `title` (String): The title of the post.
+- `content' (String): The main content of the post.
+- `createdAt' (Date): The date when the post was created.
+- `updatedAt' (Date): The date of the last update of the post.
+- `userId' (String): The ID of the user who created the post.
+- `hashtags' (Array of Strings): A list of hashtags associated with a post.
 
-## Модели данных
+**Methods:**
+- `createPost()': Create a new post with hashtags.
+- `editPost()': Editing an existing post.
+- `deletePost()': Deleting a post.
+- `getPost()': Getting information about a post.
+- `likePost()': Adding the "like" function to a post.
+- `repost()`: Repost a post on your page.
 
-### 1. Модель пользователя (User)
+### 3. The Comment Model
 
-**Цель:** Управление авторизацией и хранение информации о пользователях.
+**Purpose:** Storing and managing comments on posts.
 
-**Поля:**
-- `userId` (String): Уникальный идентификатор пользователя.
-- `username` (String): Имя пользователя.
-- `email` (String): Адрес электронной почты для аутентификации.
-- `passwordHash` (String): Хеш пароля для обеспечения безопасности.
-- `profilePicture` (String): URL к изображению профиля.
-- `bio` (String): Текстовое описание пользователя.
-- `createdAt` (Date): Дата регистрации.
-- `updatedAt` (Date): Дата последнего обновления профиля.
-- `authProvider` (String): Сервис, через который пользователь регистрировался (например, Google, Facebook).
+**Fields:**
+- `commentId` (String): The unique ID of the comment.
+- `content` (String): The content of the comment.
+- `createdAt' (Date): The date when the comment was created.
+- `userId' (String): The ID of the user who wrote the comment.
+- `postId` (String): The ID of the post to which the comment belongs.
 
-**Методы:**
-- `register()`: Регистрация нового пользователя через email или внешний сервис.
-- `login()`: Вход пользователя в приложение через email или внешний сервис.
-- `editProfile()`: Изменение информации профиля.
-- `deleteAccount()`: Удаление учетной записи.
+**Methods:**
+- `addComment()`: Adding a new comment to a post.
+- `editComment()': Editing an existing comment.
+- `deleteComment()': Deleting a comment.
+- `getCommentsByPost()': Getting all comments for a specific post.
 
-### 2. Модель поста (Post)
+### 4. Recommendation Model
 
-**Цель:** Хранение записей, которые создают пользователи, и управление ими.
+**Goal:** Generate recommendations for users based on their interactions and interests.
 
-**Поля:**
-- `postId` (String): Уникальный идентификатор поста.
-- `title` (String): Заголовок поста.
-- `content` (String): Основное содержание поста.
-- `createdAt` (Date): Дата создания поста.
-- `updatedAt` (Date): Дата последнего обновления поста.
-- `userId` (String): Идентификатор пользователя, создавшего пост.
-- `hashtags` (Array of Strings): Список хештегов, связанных с постом.
-
-**Методы:**
-- `createPost()`: Создание нового поста с хештегами.
-- `editPost()`: Редактирование существующего поста.
-- `deletePost()`: Удаление поста.
-- `getPost()`: Получение информации о посте.
-- `likePost()`: Добавление функции "лайк" к посту.
-- `repost()`: Репост поста на своей странице.
-
-### 3. Модель комментария (Comment)
-
-**Цель:** Хранение комментариев к постам и их управление.
-
-**Поля:**
-- `commentId` (String): Уникальный идентификатор комментария.
-- `content` (String): Содержание комментария.
-- `createdAt` (Date): Дата создания комментария.
-- `userId` (String): Идентификатор пользователя, который написал комментарий.
-- `postId` (String): Идентификатор поста, к которому относится комментарий.
-
-**Методы:**
-- `addComment()`: Добавление нового комментария к посту.
-- `editComment()`: Редактирование существующего комментария.
-- `deleteComment()`: Удаление комментария.
-- `getCommentsByPost()`: Получение всех комментариев для конкретного поста.
-
-### 4. Модель рекомендаций (Recommendation)
-
-**Цель:** Генерация рекомендаций для пользователей на основе их взаимодействий и интересов.
-
-**Поля:**
-- `recommendationId` (String): Уникальный идентификатор рекомендации.
-- `userId` (String): Идентификатор пользователя, для которого предназначена рекомендация.
-- `postId` (String): Идентификатор рекомендованного поста.
-- `reason` (String): Описание причины рекомендации (например, на основе просмотренных хештегов или подписок
+**Fields:**
+- `recommendationId` (String): The unique identifier of the recommendation.
+- `userId' (String): The identifier of the user for whom the recommendation is intended.
+- `postId' (String): The ID of the recommended post.
+- `reason` (String): Description of the reason for the recommendation (for example, based on viewed hashtags or subscriptions

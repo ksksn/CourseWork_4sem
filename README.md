@@ -84,3 +84,6 @@ JWT upon successful authentication, which will be used for subsequent requests t
 - `userId` (String): The identifier of the user for whom the recommendation is intended.
 - `postId` (String): The ID of the recommended post.
 - `reason` (String): Description of the reason for the recommendation (for example, based on viewed hashtags or subscriptions).
+
+![IMAGE 2025-03-13 17:03:43](https://github.com/user-attachments/assets/f4011fe7-53ea-49e7-802d-55886d4569d2)
+

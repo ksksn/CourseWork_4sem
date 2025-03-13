@@ -2,7 +2,7 @@
 
 Content sharing web application with adaptive recommendation system
 
-##Functional requirements
+## Functional requirements
 1. Authorization via mail, the ability to log in through other services using OAuth 2.0 technology
 2. User profile, text description field
 3. Creating a note with the ability to add a hashtag(s)

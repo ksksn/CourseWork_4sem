@@ -4,7 +4,8 @@
 
 People naturally seek out connection and interaction with others, and this tendency is a fundamental aspect of human nature. In the digital age, where interactions often happen through screens, content sharing platforms serve as vital conduits for communication. These platforms enable users to express themselves, share their thoughts, ideas, and creativity, thus contributing to the development of a more dynamic and varied information landscape.
 
----
+JWT upon successful authentication, which will be used for subsequent requests to verify their identity. OAuth 2.0 will be used for secure authorization, allowing users to log in through various external services. The project will utilize a REST API to facilitate communication between the client and server. This will enable seamless data exchange and interaction with the application’s resources, such as user profiles, posts, and comments, using standard HTTP methods.
+
 
 ## Functional Requirements
 
@@ -14,7 +15,6 @@ People naturally seek out connection and interaction with others, and this tende
 4. **Creating comments** – to your own or other people's posts, the "like" function, reposts to your page.
 5. **A feed of recommendations** – based on user preferences, subscriptions, and used/viewed hashtags.
 
----
 
 ### 1. The User Model
 
@@ -37,8 +37,6 @@ People naturally seek out connection and interaction with others, and this tende
 - `editProfile()`: Changing profile information.
 - `deleteAccount()`: Deleting an account.
 
----
-
 ### 2. The Post Model
 
 **Purpose:** Storing and managing records created by users.
@@ -60,8 +58,6 @@ People naturally seek out connection and interaction with others, and this tende
 - `likePost()`: Adding the "like" function to a post.
 - `repost()`: Repost a post on your page.
 
----
-
 ### 3. The Comment Model
 
 **Purpose:** Storing and managing comments on posts.
@@ -78,8 +74,6 @@ People naturally seek out connection and interaction with others, and this tende
 - `editComment()`: Editing an existing comment.
 - `deleteComment()`: Deleting a comment.
 - `getCommentsByPost()`: Getting all comments for a specific post.
-
----
 
 ### 4. Recommendation Model
 
